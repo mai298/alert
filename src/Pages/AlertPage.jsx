@@ -66,7 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function AlertPage({ setOpen, open, setMode }) {
+export default function AlertPage() {
   const industryList = [
     { title: "Health Care", icon: <FavoriteIcon /> },
     { title: "Materials", icon: <AutoModeIcon /> },

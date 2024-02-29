@@ -14,6 +14,7 @@ export default function Root() {
   const darkTheme = createTheme({
     palette: {
       mode: mode,
+      
     },
   });
 
