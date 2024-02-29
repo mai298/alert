@@ -1,6 +1,6 @@
 import React from "react";
 import SearchComp from "./SearchComp";
-import { Badge, IconButton } from "@mui/material";
+import { Badge, Divider, IconButton } from "@mui/material";
 import {
   Brightness4Outlined,
   Brightness7Outlined,
@@ -47,52 +47,19 @@ export default function AppBarr({ setOpen, open, setMode }) {
   };
   return (
     <>
-      <AppBar position="fixed" open={open}>
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
+             <div className="header mt-3 d-flex justify-content-between">
+            <Divider sx={{color :"blue",width:"50px"}} />
 
-              ...(open && { display: "none" }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
+              <h4 className="alert-header ms-2 ">Alerts</h4>
 
-          <Typography className="alert-header me-5 ">Alerts</Typography>
-          <SearchContainer>
-            <SearchComp />
-          </SearchContainer>
+              <SearchContainer>
+                <SearchComp />
+              </SearchContainer>
 
-          <Badge badgeContent={4} color="success">
-            <Notifications color="action" />
-          </Badge>
-
-          <IconButton
-            onClick={() => {
-              setMode(theme.palette.mode === "dark" ? "light" : "dark");
-            }}
-            sx={{ ml: 1 }}
-            color="inherit"
-          >
-            {theme.palette.mode === "dark" ? (
-              <Brightness4Outlined />
-            ) : (
-              <Brightness7Outlined sx={{ color: "orange" }} />
-            )}
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+              <Badge className="me-3" badgeContent={4} color="success">
+                <Notifications color="action" />
+              </Badge>
+            </div>
     </>
   );
 }

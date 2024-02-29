@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Box, Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import { Badge, Box, Button, Divider, FormControl, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, Typography } from "@mui/material";
 import AccordionComp from "../Components/AccordionComp";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled, alpha } from "@mui/material/styles";
@@ -17,6 +17,9 @@ import PrecisionManufacturingOutlinedIcon from '@mui/icons-material/PrecisionMan
 import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined';
 import FactoryOutlinedIcon from '@mui/icons-material/FactoryOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import { Brightness4Outlined, Brightness7Outlined, Menu, Notifications } from "@mui/icons-material";
+import SearchComp from "../Components/SearchComp";
+import { useTheme } from "styled-components";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,7 +60,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function AlertPage() {
+const SearchContainer = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "60%",
+});
+
+
+export default function AlertPage({setOpen, open, setMode}) { 
+  
+  
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
 
   const industryList=[
 {title:"Health Care",icon:<FavoriteIcon/>},
@@ -77,19 +94,26 @@ const industryList2=[
 
 
 
+ 
+ 
+
   ];
 
   return (
     <>
       <Box className="alert-content">
         <Container>
+          
           <Row className="mx-auto">
-            <Col lg={8}  md={12} className="ms-4" >
+           
+
+            <Col lg={8} md={12} className="ms-4"> 
+            
+
               <AccordionComp />
-              
             </Col>
 
-            <Col lg={2} md={12}  >
+            <Col lg={2} md={12}>
               <h4>Filters</h4>
 
               <div className="fileration">
@@ -98,15 +122,12 @@ const industryList2=[
                   <p>clear All</p>
                 </div>
 
-                <div
-                  className="filterd mx-auto"  >
-                  <div
-                    className="filter-item text-center" >
+                <div className="filterd mx-auto">
+                  <div className="filter-item text-center">
                     <p style={{ color: "#202020" }}>Real Estate</p>
                     <CloseIcon style={{ color: "#202020" }} />
                   </div>
                 </div>
-
 
                 <div
                   className="stock text-start pt-4 mt-5"
@@ -245,7 +266,7 @@ const industryList2=[
                     </ul>
 
                     <ul style={{ listStyleType: "none" }}>
-                    <h5 className="text-center">Asset</h5>
+                      <h5 className="text-center">Asset</h5>
 
                       <li> stocks</li>
                       <li className="asset-li text-center">Options</li>
@@ -255,7 +276,7 @@ const industryList2=[
                 </div>
               </div>
 
-        <Button className="applyBtn mt-3">Apply</Button>
+              <Button className="applyBtn mt-3">Apply</Button>
             </Col>
           </Row>
         </Container>
