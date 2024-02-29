@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Drawwer from "../Components/Drawwer";
 import { Box, CssBaseline } from "@mui/material";
-import { Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AppBarr from "../Components/AppBarr";
 
@@ -10,7 +10,6 @@ const drawerWidth = 240;
 export default function Root() {
   const [mode, setMode] = useState("dark");
   const [open, setOpen] = useState(false);
-  
 
   const darkTheme = createTheme({
     palette: {
@@ -33,8 +32,7 @@ export default function Root() {
         <Box
           component="main"
           sx={{
-
-            ml: {lg:"2rem", sm: `${drawerWidth}px` },
+            ml: { lg: "2rem", sm: `${drawerWidth}px` },
             display: "flex",
             justifyContent: "center",
             mt: "10rem",

@@ -1,5 +1,5 @@
-.header{
-  width:100% !important;
+.header {
+  width: 100% !important;
   height: 100% !important;
 }
 
@@ -24,17 +24,18 @@
 
 
 @media (max-width: 656px) {
-  .header{
-      width:380px !important;
-      display: flex !important;
-      flex-wrap: wrap !important;
+  .header {
+    width: 380px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
 
   }
-  .alert-header{
+
+  .alert-header {
     font-weight: 500 !important;
     text-align: left;
     font-family: poppins !important;
- font-size: 20px !important;
+    font-size: 20px !important;
   }
 
   .alert-header::before {

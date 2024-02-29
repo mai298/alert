@@ -1,25 +1,31 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Badge, Box, Button, Divider, FormControl, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import AccordionComp from "../Components/AccordionComp";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import AutoModeIcon from '@mui/icons-material/AutoMode';
-import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
-import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import OtherHousesOutlinedIcon from '@mui/icons-material/OtherHousesOutlined';
-import './AlertPage.css';
-import PrecisionManufacturingOutlinedIcon from '@mui/icons-material/PrecisionManufacturingOutlined';
-import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined';
-import FactoryOutlinedIcon from '@mui/icons-material/FactoryOutlined';
-import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
-import { Brightness4Outlined, Brightness7Outlined, Menu, Notifications } from "@mui/icons-material";
-import SearchComp from "../Components/SearchComp";
-import { useTheme } from "styled-components";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import AutoModeIcon from "@mui/icons-material/AutoMode";
+import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
+import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
+import "./AlertPage.css";
+import PrecisionManufacturingOutlinedIcon from "@mui/icons-material/PrecisionManufacturingOutlined";
+import MapsUgcOutlinedIcon from "@mui/icons-material/MapsUgcOutlined";
+import ConstructionOutlinedIcon from "@mui/icons-material/ConstructionOutlined";
+import FactoryOutlinedIcon from "@mui/icons-material/FactoryOutlined";
+import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,56 +66,30 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const SearchContainer = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "60%",
-});
-
-
-export default function AlertPage({setOpen, open, setMode}) { 
-  
-  
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-
-  const industryList=[
-{title:"Health Care",icon:<FavoriteIcon/>},
-{title:"Materials",icon:<AutoModeIcon/>},
-{title:"Energy",icon:<BoltOutlinedIcon/>},
-{title:"Consumer Discretionary",icon:<PaymentOutlinedIcon/>},
-{title:"Consumer Staples",icon:<ShoppingCartOutlinedIcon/>},
-{title:"Real Estate",icon:<OtherHousesOutlinedIcon/>},
+export default function AlertPage({ setOpen, open, setMode }) {
+  const industryList = [
+    { title: "Health Care", icon: <FavoriteIcon /> },
+    { title: "Materials", icon: <AutoModeIcon /> },
+    { title: "Energy", icon: <BoltOutlinedIcon /> },
+    { title: "Consumer Discretionary", icon: <PaymentOutlinedIcon /> },
+    { title: "Consumer Staples", icon: <ShoppingCartOutlinedIcon /> },
+    { title: "Real Estate", icon: <OtherHousesOutlinedIcon /> },
   ];
 
-const industryList2=[
-  {title:"IT",icon:<PrecisionManufacturingOutlinedIcon/>},
-  {title:"Communication",icon:<MapsUgcOutlinedIcon />},
-  {title:"Industrials",icon:<FactoryOutlinedIcon/>},
-  {title:"Utilities",icon:<ConstructionOutlinedIcon/>},
-  {title:"Financials",icon:<MonetizationOnOutlinedIcon/>},
-
-
-
- 
- 
-
+  const industryList2 = [
+    { title: "IT", icon: <PrecisionManufacturingOutlinedIcon /> },
+    { title: "Communication", icon: <MapsUgcOutlinedIcon /> },
+    { title: "Industrials", icon: <FactoryOutlinedIcon /> },
+    { title: "Utilities", icon: <ConstructionOutlinedIcon /> },
+    { title: "Financials", icon: <MonetizationOnOutlinedIcon /> },
   ];
 
   return (
     <>
       <Box className="alert-content">
         <Container>
-          
           <Row className="mx-auto">
-           
-
-            <Col lg={8} md={12} className="ms-4"> 
-            
-
+            <Col lg={8} md={12} className="ms-4">
               <AccordionComp />
             </Col>
 

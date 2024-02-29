@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, useTheme} from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -20,7 +20,11 @@ import headerImg from "../assets/street suite logo-04.png";
 import "./Drawwer.css";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Stack } from "@mui/material";
-import { Brightness4Outlined, Brightness7Outlined, Menu } from "@mui/icons-material";
+import {
+  Brightness4Outlined,
+  Brightness7Outlined,
+  Menu,
+} from "@mui/icons-material";
 
 const drawerWidth = 240;
 
@@ -72,7 +76,7 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function Drawwer({ open, setOpen ,setMode}) {
+export default function Drawwer({ open, setOpen, setMode }) {
   const navigate = useNavigate();
   const items = [
     { title: "Alerts", icon: <NotificationsIcon />, path: "/" },
@@ -96,42 +100,38 @@ export default function Drawwer({ open, setOpen ,setMode}) {
         <CssBaseline />
 
         <Drawer variant="permanent" open={open}>
-                      <IconButton
+          <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              
-
               ...(open && { display: "none" }),
             }}
           >
             <Menu />
           </IconButton>
           <Stack direction={"column"} alignItems={"center"}>
-               <IconButton
-            onClick={() => {
-              setMode(theme.palette.mode === "dark" ? "light" : "dark");
-            }}
-            
-            color="inherit"
-          >
-            {theme.palette.mode === "dark" ? (
-              <Brightness4Outlined />
-            ) : (
-              <Brightness7Outlined sx={{ color: "orange" }} />
-            )}
-          </IconButton> 
-          <IconButton onClick={handleDrawerClose}>
+            <IconButton
+              onClick={() => {
+                setMode(theme.palette.mode === "dark" ? "light" : "dark");
+              }}
+              color="inherit"
+            >
+              {theme.palette.mode === "dark" ? (
+                <Brightness4Outlined />
+              ) : (
+                <Brightness7Outlined sx={{ color: "orange" }} />
+              )}
+            </IconButton>
+            <IconButton onClick={handleDrawerClose}>
               {theme.direction === "rtl" ? (
                 <ChevronRightIcon />
               ) : (
                 <ChevronLeftIcon />
               )}
             </IconButton>
-
-</Stack>
+          </Stack>
           <DrawerHeader
             sx={{
               display: "flex",
@@ -140,7 +140,6 @@ export default function Drawwer({ open, setOpen ,setMode}) {
               justifyContent: "center",
             }}
           >
-
             <img
               src={headerImg}
               alt="header"
@@ -151,7 +150,6 @@ export default function Drawwer({ open, setOpen ,setMode}) {
                 transition: "width 0.3s, height 0.3s",
               }}
             />
-
           </DrawerHeader>
 
           <List sx={{ py: 0 }}>
