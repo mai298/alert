@@ -1,0 +1,17 @@
+.alert-header::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 38px;
+    background: #53acff;
+    top: 3rem !important;
+    position: sticky;
+  }
+  
+  .alert-header {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    text-align: left;
+    font-family: poppins !important;
+
+  }
